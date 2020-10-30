@@ -38,19 +38,13 @@ namespace XamariniOSImageStore
 			{
 				fileName = Path.Combine(folderPath, "image.jpg");
 			}
-
 			var img = UIImage.FromFile(filename);
-
 			NSData image = img.AsJPEG();
 			NSError err = null;
-
-
 			image.Save(fileName, false, out err);
-
 			lblPath.Text = "File Path:" + fileName;
 			imgProfile.Image = UIImage.FromFile(fileName);
-
-		}  
+		}
 
 		public override void DidReceiveMemoryWarning()
 		{
